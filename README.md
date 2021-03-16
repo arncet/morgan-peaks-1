@@ -88,5 +88,10 @@ La façon dont vous aborderiez le problème pour réaliser l’algorithme en C (
 * Diagrammes générés avec https://app.diagrams.net/
 * Architectures reactives : https://www.reactivemanifesto.org/
 
-[entity-relation-diagram]: https://github.com/morgan-germain/lelivrescolaire/raw/main/entity-relation-diagram.png "Entity Relation Diagram"
-[block-diagram]: https://github.com/morgan-germain/lelivrescolaire/raw/main/block-diagram.png "Block Diagram"
+[entity-relation-diagram]: entity-relation-diagram.png "Entity Relation Diagram"
+[block-diagram]: block-diagram.png "Block Diagram"
+
+Markdown conversion to PDF:
+```bash
+npx markdown-pdf README.md
+```
