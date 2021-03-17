@@ -73,6 +73,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # Code architecture
 TODO:
 * Tooling documentation https://github.com/khriztianmoreno/crud-redux
+* Material example : https://codesandbox.io/s/vykqom2w37?file=/public/index.html
 * Used documentation https://bezkoder.com/react-crud-web-api/
 * Ajouter router-dom
 * Créer les objets :
@@ -103,7 +104,7 @@ TODO:
   * Pupil
   * PupilEdit
 * store + initialState pour les données 'fixtures'
-
+* Ajouter eslint-google
 * Remplacer Bootstrap par Material
 ```bash
   # Remove this from App.js
