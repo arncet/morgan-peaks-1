@@ -12,18 +12,18 @@ class App extends Component {
     return (
       <div>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={'/pupils'} className="navbar-brand">
+          <Link to={'/'} className="navbar-brand">
             Home
           </Link>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link to={'/pupils'} className="nav-link">
-                Pupils
+                List of pupils
               </Link>
             </li>
             <li className="nav-item">
               <Link to={'/add'} className="nav-link">
-                Add
+                Add new pupil
               </Link>
             </li>
           </div>

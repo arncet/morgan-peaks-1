@@ -1,68 +1,57 @@
 import React, {Component} from 'react';
 import PupilDataService from '../services/pupil.service';
 
-/**
- * @class AddPupil
- */
 export default class AddPupil extends Component {
   constructor(props) {
     super(props);
-    this.onChangeTitle = this.onChangeTitle.bind(this);
-    this.onChangeDescription = this.onChangeDescription.bind(this);
-    this.saveTutorial = this.saveTutorial.bind(this);
-    this.newTutorial = this.newTutorial.bind(this);
+    this.onChangeFirstName = this.onChangeFirstName.bind(this);
+    this.onChangeLastName = this.onChangeLastName.bind(this);
+    this.savePupil = this.savePupil.bind(this);
+    this.newPupil = this.newPupil.bind(this);
 
     this.state = {
       id: null,
-      title: '',
-      description: '',
-      published: false,
+      firstName: '',
+      lastName: '',
 
       submitted: false,
     };
   }
 
-  onChangeTitle(e) {
+  onChangeFirstName(e) {
     this.setState({
-      title: e.target.value,
+      firstName: e.target.value,
     });
   }
 
-  onChangeDescription(e) {
+  onChangeLastName(e) {
     this.setState({
-      description: e.target.value,
+      lastName: e.target.value,
     });
   }
 
-  saveTutorial() {
+  savePupil() {
     const data = {
-      title: this.state.title,
-      description: this.state.description,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
     };
 
-    PupilDataService.create(data)
-        .then((response) => {
-          this.setState({
-            id: response.data.id,
-            title: response.data.title,
-            description: response.data.description,
-            published: response.data.published,
+    const response = PupilDataService.create(data);
+    this.setState({
+      id: response.data.id,
+      firstName: response.data.firstName,
+      lastName: response.data.lastName,
 
-            submitted: true,
-          });
-          console.log(response.data);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+      submitted: true,
+    });
+    console.log(response.data);
   }
 
-  newTutorial() {
+  newPupil() {
     this.setState({
       id: null,
-      title: '',
-      description: '',
-      published: false,
+      firstName: '',
+      lastName: '',
 
       submitted: false,
     });
@@ -70,7 +59,48 @@ export default class AddPupil extends Component {
 
   render() {
     return (
-      <p>Add pupil</p>
+      <div className="submit-form">
+        {this.state.submitted ? (
+        <div>
+          <h4>You submitted successfully!</h4>
+          <button className="btn btn-success" onClick={this.newPupil}>
+            Add
+          </button>
+        </div>
+      ) : (
+        <div>
+          <div className="form-group">
+            <label htmlFor="firstName">First name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="firstName"
+              required
+              value={this.state.firstName}
+              onChange={this.onChangeFirstName}
+              name="firstName"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="lastName">Last name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="lastName"
+              required
+              value={this.state.lastName}
+              onChange={this.onChangeLastName}
+              name="lastName"
+            />
+          </div>
+
+          <button onClick={this.savePupil} className="btn btn-success">
+            Submit
+          </button>
+        </div>
+      )}
+      </div>
     );
   }
 }

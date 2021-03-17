@@ -28,6 +28,7 @@
     ],
     "rules": {
       "no-console": "off",
+      "no-debugger": "off",
       "new-cap": "off",
       "max-len": "off",
       "require-jsdoc": "off"
