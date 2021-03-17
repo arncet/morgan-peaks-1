@@ -22,12 +22,15 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "eslint:recommended",
+      "google"
     ],
     "rules": {
       "no-console": "off",
       "new-cap": "off",
-      "max-len": "off"
+      "max-len": "off",
+      "require-jsdoc": "off"
     }
   },
   "browserslist": {
@@ -43,6 +46,8 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^7.20.0",
+    "eslint-config-google": "^0.14.0",
     "prettier": "^2.2.1"
   }
 }
