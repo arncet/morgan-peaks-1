@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# Code architecture
+TODO:
+* eslintrc https://github.com/khriztianmoreno/crud-redux
+* Créer les objets :
+  * Classroom + bouton New
+  * Pupils + bouton Edit / Remove pour chacun
+  * Pupil
+  * PupilEdit
+* Ajouter Material
+* Ajouter router-dom
+* store + initialState pour les données 'fixtures'
