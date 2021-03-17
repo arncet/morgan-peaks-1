@@ -72,12 +72,41 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # Code architecture
 TODO:
-* eslintrc https://github.com/khriztianmoreno/crud-redux
+* Tooling documentation https://github.com/khriztianmoreno/crud-redux
+* Used documentation https://bezkoder.com/react-crud-web-api/
+* Ajouter router-dom
 * Créer les objets :
-  * Classroom + bouton New
+  * App
+  * ClassRoom
+  * AddPupil => /add
+  * PupilsList => /pupils
+  * Pupil => /pupils/:id
+
+* Design
+  * Classroom + bouton New + state
+```javascript
+  constructor(props) {
+    super(props);
+    this.state = {
+      pupils = [{
+        name: 'John Doe'
+      }]
+    };
+  }
+  handleNew() {
+    const pupils = [...pupils, {name: 'unnamed'}];
+    this.setState({pupils});
+  }
+```
   * Pupils + bouton Edit / Remove pour chacun
+    * Picking a key pour définir l'ID de chaque Pupil https://reactjs.org/tutorial/tutorial.html#picking-a-key
   * Pupil
   * PupilEdit
-* Ajouter Material
-* Ajouter router-dom
 * store + initialState pour les données 'fixtures'
+
+* Remplacer Bootstrap par Material
+```bash
+  # Remove this from App.js
+  import "bootstrap/dist/css/bootstrap.min.css";
+npm uninstall --save bootstrap
+```
