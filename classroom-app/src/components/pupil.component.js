@@ -55,23 +55,20 @@ class Pupil extends Component {
     this.setState({
       currentPupil: response.data,
     });
-    console.log(response.data);
   }
 
   updatePupil() {
-    const response = PupilDataService.update(
+    PupilDataService.update(
         this.state.currentPupil.id,
         this.state.currentPupil,
     );
-    console.log(response.data);
     this.setState({
       message: 'The pupil was updated successfully!',
     });
   }
 
   deletePupil() {
-    const response = PupilDataService.delete(this.state.currentPupil.id);
-    console.log(response.data);
+    PupilDataService.delete(this.state.currentPupil.id);
     this.props.history.push('/pupils');
   }
 
@@ -108,7 +105,7 @@ class Pupil extends Component {
             </form>
 
             <button
-              className="badge badge-danger mr-2"
+              className="btn btn-danger mr-2"
               onClick={this.deletePupil}
             >
               Delete
@@ -116,7 +113,7 @@ class Pupil extends Component {
 
             <button
               type="submit"
-              className="badge badge-success"
+              className="btn btn-success"
               onClick={this.updatePupil}
             >
               Update

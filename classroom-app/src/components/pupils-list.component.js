@@ -39,7 +39,6 @@ class PupilsList extends Component {
     this.setState({
       pupils: response.data,
     });
-    console.log(response.data);
   }
 
   refreshList() {
@@ -62,8 +61,7 @@ class PupilsList extends Component {
   }
 
   removeAllPupils() {
-    const response = PupilDataService.deleteAll();
-    console.log(response.data);
+    PupilDataService.deleteAll();
     this.refreshList();
   }
 
@@ -72,7 +70,6 @@ class PupilsList extends Component {
     this.setState({
       pupils: response.data,
     });
-    console.log(response.data);
   }
 
   deletePupil(index) {
@@ -123,12 +120,14 @@ class PupilsList extends Component {
                   key={index}
                 >
                   <button
-                    className="badge badge-danger"
+                    className="btn btn-danger"
                     onClick={() => this.deletePupil(index)}
                   >
                     Delete
                   </button>
-                  {pupil.firstName} {pupil.lastName}
+                  <span>
+                    {pupil.firstName} {pupil.lastName}
+                  </span>
                 </li>
               ))}
           </ul>
@@ -159,9 +158,10 @@ class PupilsList extends Component {
 
               <Link
                 to={'/pupils/' + currentPupil.id}
-                className="badge badge-warning"
               >
-                Edit
+                <button className="btn btn-warning">
+                  Edit
+                </button>
               </Link>
             </div>
           ) : (

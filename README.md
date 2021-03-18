@@ -15,5 +15,3 @@ Elle comprend :
 * Un service permettant d'obtenir des données initiales
   *  TODO: créer un store avec initialState
   *  https://dev.to/sanderdebr/react-redux-crud-app-for-beginners-with-hooks-2hja
-  *  Virer les console.log
-  *  Virer les bind.this

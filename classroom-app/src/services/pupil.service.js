@@ -2,6 +2,10 @@
 class PupilDataService {
   pupils = [
     {id: 0, firstName: 'John', lastName: 'Doe'},
+    {id: 1, firstName: 'Martin', lastName: 'Dupont'},
+    {id: 2, firstName: 'Morgan', lastName: 'Germain'},
+    {id: 3, firstName: 'Duke', lastName: 'Ellington'},
+    {id: 4, firstName: 'Django', lastName: 'Reinhardt'},
   ];
 
   getAll() {
