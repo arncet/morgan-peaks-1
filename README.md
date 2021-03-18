@@ -12,4 +12,8 @@ Elle comprend :
 * CRUD des élèves (2 champs : firstName et lastName)
 * Bootstrap (car plus rapide à mettre en place ue MaterialUI dans le temps imparti)
 * Pas d'animations dans un premier temps bien que faisable, mais cela demande du temps
-* Un service permettant d'obtenir des données initiales (TODO: créer un store avec initialState)
+* Un service permettant d'obtenir des données initiales
+  *  TODO: créer un store avec initialState
+  *  https://dev.to/sanderdebr/react-redux-crud-app-for-beginners-with-hooks-2hja
+  *  Virer les console.log
+  *  Virer les bind.this

@@ -128,12 +128,7 @@ class PupilsList extends Component {
                   >
                     Delete
                   </button>
-                  <Link to={'/pupils/' + index}>
-                    <button className="badge badge-warning">
-                      Edit
-                    </button>
-                  </Link>
-                  {pupil.firstName}
+                  {pupil.firstName} {pupil.lastName}
                 </li>
               ))}
           </ul>

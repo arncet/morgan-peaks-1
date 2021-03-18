@@ -7,14 +7,11 @@ export default class AddPupil extends Component {
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
     this.onChangeLastName = this.onChangeLastName.bind(this);
     this.savePupil = this.savePupil.bind(this);
-    this.newPupil = this.newPupil.bind(this);
 
     this.state = {
       id: null,
       firstName: '',
       lastName: '',
-
-      submitted: false,
     };
   }
 
@@ -41,65 +38,42 @@ export default class AddPupil extends Component {
       id: response.data.id,
       firstName: response.data.firstName,
       lastName: response.data.lastName,
-
-      submitted: true,
     });
-    console.log(response.data);
-  }
-
-  newPupil() {
-    this.setState({
-      id: null,
-      firstName: '',
-      lastName: '',
-
-      submitted: false,
-    });
+    this.props.history.push('/pupils');
   }
 
   render() {
     return (
       <div className="submit-form">
-        {this.state.submitted ? (
-        <div>
-          <h4>You submitted successfully!</h4>
-          <button className="btn btn-success" onClick={this.newPupil}>
-            Add
-          </button>
+        <div className="form-group">
+          <label htmlFor="firstName">First name</label>
+          <input
+            type="text"
+            className="form-control"
+            id="firstName"
+            required
+            value={this.state.firstName}
+            onChange={this.onChangeFirstName}
+            name="firstName"
+          />
         </div>
-      ) : (
-        <div>
-          <div className="form-group">
-            <label htmlFor="firstName">First name</label>
-            <input
-              type="text"
-              className="form-control"
-              id="firstName"
-              required
-              value={this.state.firstName}
-              onChange={this.onChangeFirstName}
-              name="firstName"
-            />
-          </div>
 
-          <div className="form-group">
-            <label htmlFor="lastName">Last name</label>
-            <input
-              type="text"
-              className="form-control"
-              id="lastName"
-              required
-              value={this.state.lastName}
-              onChange={this.onChangeLastName}
-              name="lastName"
-            />
-          </div>
-
-          <button onClick={this.savePupil} className="btn btn-success">
-            Submit
-          </button>
+        <div className="form-group">
+          <label htmlFor="lastName">Last name</label>
+          <input
+            type="text"
+            className="form-control"
+            id="lastName"
+            required
+            value={this.state.lastName}
+            onChange={this.onChangeLastName}
+            name="lastName"
+          />
         </div>
-      )}
+
+        <button onClick={this.savePupil} className="btn btn-success">
+          Submit
+        </button>
       </div>
     );
   }
