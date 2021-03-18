@@ -6,12 +6,12 @@ Un export PDF de ces résultats [se trouve ici](exo1/README.pdf).
 
 ## Exercice 2 - React
 
-L'application écrite en ReactJS s'appelle classroom-app.
+L'application de gestion de classe en ReactJS s'appelle classroom-app.
 
-Elle comprend :
-* CRUD des élèves (2 champs : firstName et lastName)
-* Bootstrap (car plus rapide à mettre en place ue MaterialUI dans le temps imparti)
-* Pas d'animations dans un premier temps bien que faisable, mais cela demande du temps
-* Un service permettant d'obtenir des données initiales
-  *  TODO: créer un store avec initialState
-  *  https://dev.to/sanderdebr/react-redux-crud-app-for-beginners-with-hooks-2hja
+Pour aller plus loin (avec plus de temps), j'aurais amélioré :
+* Remplacement du service par un store
+* Des tests unitaires
+* Remplacement de Bootstrap en natif par Material avec une librairie : https://material-ui.com/
+* Des animations au routage avec https://reactrouter.com/native/guides/animation
+* Lazy-load au routage
+* Utilisation des Hooks

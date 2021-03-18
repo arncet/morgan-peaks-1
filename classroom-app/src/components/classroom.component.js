@@ -23,7 +23,7 @@ class App extends Component {
             </li>
             <li className="nav-item">
               <Link to={'/add'} className="nav-link">
-                Add new pupil
+                Add a new pupil
               </Link>
             </li>
           </div>
